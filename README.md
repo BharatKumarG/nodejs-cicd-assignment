@@ -19,10 +19,15 @@ A simple Node.js application that prints "Hello, World!" and includes a CI/CD pi
   - Kubernetes CLI
 
 ## Project Structure
-nodejs-hello-world/ ├── app.js ├── package.json ├── Dockerfile ├── k8s/ │ ├── deployment.yaml │ └── service.yaml ├── Jenkinsfile └── README.md
-
-markdown
-Copy code
+nodejs-hello-world/
+├── app.js
+├── package.json
+├── Dockerfile
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
+├── Jenkinsfile
+└── README.md
 
 ## Steps to Run
 1. **Run Locally**:
