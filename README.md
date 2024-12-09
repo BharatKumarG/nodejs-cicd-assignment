@@ -59,20 +59,23 @@ The Service YAML file:
 
 Exposes the application to the outside world using a LoadBalancer on port 80.
 Routes traffic to the internal port 3000 of the running containers.
+
 Steps to Deploy
 1. Build and Push the Docker Image
 First, make sure that the Node.js application is containerized correctly.
 
 Build the Docker Image:
-
-bash
-Copy code
 docker build -t gudurubharatkumar/nodejs-hello-world:latest .
-Push the Docker Image to Docker Hub:
+docker run -d -p gudurubharatkumar/nodejs-hello-world:latest
 
-bash
-Copy code
+![Screenshot 2024-12-09 213650](https://github.com/user-attachments/assets/8919f13e-ae4b-411e-b850-db751aa02e62)
+
+Push the Docker Image to Docker Hub:
 docker push gudurubharatkumar/nodejs-hello-world:latest
+
+![Screenshot 2024-12-09 214558](https://github.com/user-attachments/assets/16cf16ba-3083-491e-9350-8a07d09f4709)
+
+
 2. Deploy to Kubernetes
 Now, you can deploy the application to your Kubernetes cluster.
 
@@ -80,25 +83,23 @@ Apply the Deployment:
 
 Save the Deployment YAML configuration in a file called hello-world-deployment.yaml and run:
 
-bash
-Copy code
 kubectl apply -f hello-world-deployment.yaml
 Apply the Service:
 
 Save the Service YAML configuration in a file called hello-world-service.yaml and run:
 
-bash
-Copy code
 kubectl apply -f hello-world-service.yaml
+![Screenshot 2024-12-09 215718](https://github.com/user-attachments/assets/5c1fbcc5-9e0d-40ac-a75a-9e3fb98d7388)
+
+
 3. Verify the Deployment
 Check the Status of the Deployment:
 
 To check the deployment status, use the following command:
 
-bash
-Copy code
 kubectl get deployments
 This will show the number of replicas and their status.
+![Screenshot 2024-12-09 213657](https://github.com/user-attachments/assets/f6f2eb98-f5c4-4323-9be1-09513049598f)
 
 Check the Service's External IP:
 
@@ -106,36 +107,17 @@ Since the service is of type LoadBalancer, Kubernetes will provision an external
 
 Run:
 
-bash
-Copy code
+![Screenshot 2024-12-09 213754](https://github.com/user-attachments/assets/66b366a1-a0bb-4336-8aef-6e3c6daa7e24)
+
 kubectl get svc hello-world-service
 Once the EXTERNAL-IP is available, you can access the application through the browser or curl:
 
-bash
-Copy code
 curl http://<external-ip>:80
 You should see the response: "Hello Bharat Kumar".
 
-4. Delete Resources (Optional)
-If you want to delete the deployed resources:
+![Screenshot 2024-12-09 213657](https://github.com/user-attachments/assets/999dbc1b-38e9-48e8-9d2a-b0f10dc7c638)
+![Screenshot 2024-12-09 213725](https://github.com/user-attachments/assets/f6c072b8-4d57-4ac8-97cb-8dba3dd1febb)
+![Screenshot 2024-12-09 213738](https://github.com/user-attachments/assets/a45f7f88-81aa-4b1f-9380-eb39c5f2bef2)
 
-Delete the Deployment:
 
-bash
-Copy code
-kubectl delete deployment hello-world-deployment
-Delete the Service:
-
-bash
-Copy code
-kubectl delete svc hello-world-service
-Notes
-Docker Hub: This project is using Docker Hub for container image storage. Ensure you push the image with your username (gudurubharatkumar).
-Kubernetes Cluster: Make sure you have a Kubernetes cluster with kubectl configured to interact with it. If using a cloud provider (AWS, GCP, Azure), ensure you have the necessary permissions to create resources like LoadBalancer services.
-
-### **Next Steps**
-1. Set up the project in a GitHub repository.
-2. Configure Jenkins and Kubernetes as outlined above.
-3. Test the pipeline and deployment.
-
-Let me know if you need further clarification or help with any part! 🚀
+Let me know if you need further clarification 🚀
