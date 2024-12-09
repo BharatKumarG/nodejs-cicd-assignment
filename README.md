@@ -36,6 +36,7 @@ Overview
 The application is a basic Node.js service that serves a simple "Hello Bharat Kumar" message when accessed. The application is packaged in a Docker container and deployed on Kubernetes using the following components:
 
 Docker: Used to containerize the Node.js application.
+
 Kubernetes: Used to orchestrate and manage the application deployment and service.
 Service: Exposes the application via a LoadBalancer type service on port 80.
 Components
