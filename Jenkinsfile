@@ -22,7 +22,7 @@ pipeline {
                     sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
 
                     // Build Docker image
-                    sh 'docker build -t gudurubharatkumar/myproo .
+                    sh 'docker build -t gudurubharatkumar/myproo .'
                 }
             }
         }
