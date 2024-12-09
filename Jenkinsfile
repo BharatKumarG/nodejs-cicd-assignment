@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_USERNAME = credentials('docker-username')  // Use the correct ID for Docker username
         DOCKER_PASSWORD = credentials('docker-password')  // Use the correct ID for Docker password
-        IMAGE_NAME = "your-docker-username/nodejs-basic-app" // Replace with your Docker Hub username and image name
+        IMAGE_NAME = "gudurubharatkumar/myproo" // Replace with your Docker Hub username and image name
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
                     sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
 
                     // Build Docker image
-                    sh 'docker build -t gudurubharatkumar/myproo .'
+                    sh 'docker build -t $IMAGE_NAME .'
                 }
             }
         }
@@ -31,10 +31,11 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to Docker Hub
-                    sh 'docker push gudurubharatkumar/myproo'
+                    sh 'docker push $IMAGE_NAME'
                 }
             }
         }
+    }
 
     post {
         always {
