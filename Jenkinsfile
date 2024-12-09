@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        DOCKER_USERNAME = credentials('docker-username')  // Use the ID of the credential
-        DOCKER_PASSWORD = credentials('docker-password')  // Use the ID of the credential
+        DOCKER_USERNAME = credentials('gudurubharatkumar')  // Use the ID of the credential
+        DOCKER_PASSWORD = credentials('Bharat@2024#')  // Use the ID of the credential
     }
     stages {
         stage('Build') {
