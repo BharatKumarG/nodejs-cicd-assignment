@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_USERNAME = credentials('docker-username')  // Use the correct ID for Docker username
-        DOCKER_PASSWORD = credentials('docker-password')  // Use the correct ID for Docker password
-        IMAGE_NAME = "gudurubharatkumar/myproo" // Replace with your Docker Hub username and image name
+        DOCKER_USERNAME = credentials('docker-username')  // Ensure this matches the correct credential ID in Jenkins
+        DOCKER_PASSWORD = credentials('docker-password')  // Ensure this matches the correct credential ID in Jenkins
+        IMAGE_NAME = "gudurubharatkumar/nodejs-hello-world" // Replace with your Docker Hub username and image name
     }
 
     stages {
