@@ -1,4 +1,4 @@
-# Node.js Hello World Application Realtime
+# Node.js Hello World Realtime Application 
 
 ## Description
 A simple Node.js application that prints "Hello, World!" and includes a CI/CD pipeline for containerization and deployment to Kubernetes.
